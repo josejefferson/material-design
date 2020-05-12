@@ -1,0 +1,75 @@
+.fabButton {
+	align-items: center;
+	background-color: $secondaryBg;
+	border: 0;
+	border-radius: 50%;
+	box-shadow: $el-6dp;
+	color: $secondaryColor;
+	cursor: pointer;
+	display: inline-flex;
+	font-size: 24px;
+	height: 56px;
+	justify-content: center;
+	outline: none;
+	padding: 0;
+	transition: box-shadow 0.25s ease, transform .3s ease, bottom .3s ease;
+	user-select: none;
+	width: 56px;
+	z-index: 3;
+
+	&.textFab {
+		border-radius: 1000px;
+		height: 48px;
+		min-width: 48px;
+		width: auto;
+
+		.material-icons,
+		.mdi {
+			margin-left: 12px;
+		}
+
+		.text {
+			font-family: $font;
+			font-size: 16px;
+			font-weight: 500;
+			margin: 0 20px;
+			text-transform: uppercase;
+		}
+
+		.material-icons~.text,
+		.mdi~.text {
+			margin-left: 12px;
+		}
+	}
+
+	&.mini {
+		height: 40px;
+		width: 40px;
+
+		&.textFab {
+			width: auto;
+		}
+	}
+
+	&.floating {
+		bottom: 32px;
+		position: fixed;
+		right: 32px;
+	}
+	
+	&:disabled,
+	&[disabled] {
+		background-color: $disabledBg;
+		box-shadow: none;
+		color: $disabledColor;
+		cursor: default;
+	}
+
+	&:not(:disabled):not([disabled]) {
+		&:active {
+			box-shadow: $el-12dp;
+		}
+	}
+
+	@include ripple($secondaryBg);
+}

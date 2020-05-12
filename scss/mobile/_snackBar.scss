@@ -1,0 +1,59 @@
+.snackBar {
+	align-items: center;
+	background-color: #323232;
+	bottom: 0;
+	display: flex;
+	font-family: $font;
+	left: 0;
+	max-width: 100%;
+	min-height: 35px;
+	padding: 6px 16px 6px 24px;
+	position: fixed;
+	right: 0;
+	transform: translateY(100%);
+	transition: .3s ease;
+	user-select: none;
+	z-index: 30;
+
+	&.opened {
+		transform: translateY(0%);
+	}
+
+	.text {
+		color: #FFFFFF;
+		font-family: $font;
+		font-size: 14px;
+		padding: 6px 0;
+		word-break: break-word;
+	}
+
+	.function {
+		height: 36px;
+		margin-left: auto;
+		padding-left: 48px;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		button,
+		a {
+			background: none;
+			border-radius: 3px;
+			border: none;
+			color: $secondaryBg;
+			display: inline-block;
+			font-family: $font;
+			font-size: 14px;
+			height: 100%;
+			margin: 0;
+			min-width: 64px;
+			outline: none;
+			overflow: hidden;
+			padding: 0 8px;
+			text-decoration: none;
+			text-transform: uppercase;
+			white-space: nowrap;
+
+			@include customRipple(0.1);
+		}
+	}
+}

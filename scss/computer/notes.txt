@@ -1,0 +1,14 @@
+cursor: none no mobile (OK)
+user select none (OK)
+font family (OK)
+z-index
+considerar <a> tags adicionar text-decoration: none
+mobile icon button (OK ???)
+background to background-color (OK)
+propriedades nos transitions
+colocar cursor disabled em elementos disabled (OK)
+navbar hover and active bg mudar de acordo com tema
+font-weight navbar mobile
+modifiquei checkbox and radio label.radio (OK)
+consertar cor de active menu mobile
+mudar cursor para auto em botão desabilitado (OK)

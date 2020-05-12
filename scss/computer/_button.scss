@@ -1,0 +1,89 @@
+.button {
+	align-items: center;
+	background-color: $secondaryBg;
+	border: none;
+	border-radius: 2px;
+	box-shadow: $el-2dp;
+	color: $secondaryColor;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: $font;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: .8px;
+	min-height: 35px;
+	outline: none;
+	padding: 0 1.5rem;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .15s ease;
+	user-select: none;
+	vertical-align: middle;
+
+	&:not(.flatButton):not(.iconButton):not(:disabled):not([disabled]) {
+		&:hover {
+			box-shadow: $el-4dp;
+		}
+		&:active {
+			box-shadow: $el-8dp;
+		}
+	}
+
+	&.flatButton {
+		@include darkRipple;
+
+		background: none;
+		box-shadow: none;
+		color: $secondaryBg;
+	
+		&:disabled,
+		&[disabled] {
+			color: $disabledColor;
+			cursor: default;
+		}
+		
+		&:not(:disabled):not([disabled]) {
+			&:hover {
+				background-color: rgba(0,0,0,0.08);
+			}
+		}
+	}
+
+	&.iconButton {
+		@include darkRipple;
+
+		align-items: center;
+		background: none;
+		border-radius: 50%;
+		box-shadow: none;
+		color: $secondaryBg;
+		height: 48px;
+		justify-content: center;
+		width: 48px;
+		
+
+		&:disabled,
+		&[disabled] {
+			color: $disabledColor;
+			cursor: default;
+		}
+		
+		&:not(:disabled):not([disabled]) {
+			&:hover {
+				background-color: rgba(0,0,0,0.08);
+			}
+		}
+	}
+
+	&:disabled,
+	&[disabled] {
+		background-color: $disabledBg;
+		box-shadow: none;
+		color: $disabledColor;
+		cursor: default;
+	}
+
+	@include ripple($secondaryBg);
+}

@@ -1,0 +1,104 @@
+.navBar {
+	align-items: center;
+	background-color: $primaryBg;
+	box-shadow: $el-4dp;
+	color: color($primaryBg);
+	display: flex;
+	font-family: $font;
+	font-size: 20px;
+	font-weight: 500;
+	height: 56px;
+	transition: .3s ease;
+	user-select: none;
+	z-index: 2;
+	
+	&.mini {
+		height: 40px;
+	}
+	
+	&.floating {
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+
+		&.indented,
+		&.sIndented {
+			box-shadow: none;
+			transform: translateY(-100%);
+		}
+	}
+
+	button,
+	a {
+		align-items: center;
+		background: none;
+		border-radius: 50%;
+		border: none;
+		color: color($primaryBg);
+		display: inline-flex;
+		height: 40px;
+		justify-content: center;
+		margin: 0;
+		outline: none;
+		padding: 0;
+		transition: .3s ease;
+		vertical-align: middle;
+		width: 40px !important;
+
+		&:disabled,
+		&[disabled] {
+			color: $disabledColor;
+		}
+
+		&:active:not(:disabled, [disabled]) {
+			background-color: rgba(0, 0, 0, 0.08);
+		}
+
+		@include ripple($primaryBg);
+
+	}
+
+	button.textButton,
+	a.textButton {
+		border-radius: 1000px;
+		font-family: $font;
+		font-size: 18px;
+		padding: 0 10px;
+		white-space: nowrap;
+		width: auto !important;
+	}
+
+	.sideButton {
+		margin-left: 12px;
+		margin-right: 5px;
+		
+		button:not(.sideButton) {
+			width: 40px;
+		}
+	}
+
+	.title {
+		font-family: $font;
+		overflow: hidden;
+		margin-left: 20px;
+		margin-right: 12px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	.scrollContent {
+		margin-left: 20px;
+		margin-right: 12px;
+		overflow-x: auto;
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.buttons {
+		margin-left: auto;
+		padding-left: 12px;
+		padding-right: 4px;
+		white-space: nowrap;
+	}
+}

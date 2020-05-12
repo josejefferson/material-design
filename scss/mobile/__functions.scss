@@ -1,0 +1,57 @@
+@function color($bg) {
+	@if ($defaultBgs) {
+		@if ($bg == $white or
+		$bg == $primary-lightGreen or
+		$bg == $primary-lime or
+		$bg == $primary-yellow or
+		$bg == $primary-amber) {
+			@return $black;
+		} @else {
+			@return $white;
+		}
+	} @else {
+		@if (lightness($bg) > 60) {
+			@return $black;
+		} @else {
+			@return $white;
+		}
+	}
+}
+
+@mixin darkRipple {
+	.legitRipple-ripple {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+}
+
+@mixin lightRipple {
+	.legitRipple-ripple {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+@mixin customRipple($opacity) {
+	.legitRipple-ripple {
+		background-color: rgba(255, 255, 255, $opacity);
+	}
+}
+
+@mixin ripple($bg) {
+	@if ($defaultBgs) {
+		@if ($bg == $white or
+		$bg == $primary-lightGreen or
+		$bg == $primary-lime or
+		$bg == $primary-yellow or
+		$bg == $primary-amber) {
+			@include darkRipple;
+		} @else {
+			@include lightRipple;
+		}
+	} @else {
+		@if (lightness($bg) > 60) {
+			@include darkRipple;
+		} @else {
+			@include lightRipple;
+		}
+	}
+}

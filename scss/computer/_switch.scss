@@ -1,0 +1,58 @@
+label.switch {
+	align-items: center;
+	cursor: pointer;
+	display: inline-flex;
+	user-select: none;
+
+	input {
+		display: none;
+	}
+
+	.switcher {
+		height: 14px;
+		margin: 4px;
+		position: relative;
+		width: 32px;
+	}
+
+	.switcher::before,
+	.switcher::after {
+		content: "";
+		position: absolute;
+	}
+
+	.switcher::before {
+		background-color: #000000;
+		border-radius: 7px;
+		height: 100%;
+		opacity: .38;
+		transition: .15s ease;
+		width: 100%;
+	}
+
+	input:checked ~ .switcher::before {
+		background-color: $secondaryBg;
+		opacity: .54;
+	}
+
+	.switcher::after {
+		background-color: #fff;
+		border-radius: 50%;
+		box-shadow: $el-2dp;
+		height: 20px;
+		margin-top: -3px;
+		opacity: 1;
+		right: 16px;
+		transition: .15s ease;
+		width: 20px;
+	}
+
+	input:checked ~ .switcher::after {
+		background-color: $secondaryBg;
+		right: -4px;
+	}
+
+	input:indeterminate ~ .switcher::after {
+		opacity: 0;
+	}
+}

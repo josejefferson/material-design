@@ -1,0 +1,7 @@
+@media (max-width: 1024px) {
+	@import "mobile/mobile.scss";
+}
+
+@media (min-width: 1025px) {
+	@import "computer/computer.scss";
+}

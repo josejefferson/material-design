@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch</title>
+</head>
+<body>
+	Beeefore<br>
+	Before
+	<label>
+		<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	<label>
+	<input class="toggle" type="checkbox">
+	</label>
+	
+	
+	After<br>
+	AAAfter
+	
+	<style type="text/css">
+		.toggle {
+			width: 40px;
+			height: 15px;
+			position: relative;
+			margin: 0 10px 0 0;
+		}
+	
+		.toggle:before,
+		.toggle:after {
+			content: "";
+			position: absolute;
+		}
+		
+		.toggle:before { /*RAIL*/
+			width: 100%;
+			background-color: #777;
+			border-radius: 30px;
+			height: 100%;
+			
+		}
+		
+		.toggle:after { /*THUMB*/
+			border: #f66 2px solid;
+			box-sizing: border-box; /*APENAS PARA A BORDA FUNCIONAR*/
+			width: 21px;
+			height: 21px;
+			margin-top: -3px;
+			background-color: #fafafa;
+			border-radius: 21px;
+			right: 19px;
+			transition: .15s ease;
+		}
+		
+		.toggle:checked:after {
+			right: 0;
+			background: #cfc;
+		}
+	</style>
+</body>
+</html>

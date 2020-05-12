@@ -1,0 +1,35 @@
+@import "_colors";
+@import "_elevation";
+
+$defaultBgs: true; // Marque como "false" caso queira utilizar cores customizadas
+
+// Definir cores
+$primaryBg: $primary-red;
+$secondaryBg: $primary-blue;
+$primaryColor: color($primaryBg);
+$secondaryColor: color($secondaryBg);
+$hoverBg: rgba(0,0,0,0.08);
+$font: 'Roboto', Arial, sans-serif;
+
+// Cores de elementos desabilitados
+$disabledBg: rgba(0, 0, 0, .12);
+$disabledColor: rgba(0, 0, 0, .37);
+
+// z-index
+$zi-menu: 5;
+$zi-snackBar: 4;
+$zi-drawer: 3;
+$zi-fabButton: 2;
+$zi-navBar: 1;
+//$zi-page: ;
+
+// CheckBox e Radio icones - 'materialDesignIcons'; 'materialIcons'; 'fontAwesome'; 'custom'
+$iconsType: 'materialDesignIcons';
+
+// Custom icons for checkbox and radio ($iconsType: 'custom')
+$checkRadioCustomFont: 'Roboto'; // Font
+$checkBoxUncheckedIcon: '☐'; // Checkbox unchecked
+$checkBoxCheckedIcon: '☑'; // Checkbox checked
+$checkBoxIndeterminateIcon: '☒'; // Checkbox indeterminate
+$radioUncheckedIcon: '⦾'; // Radio unchecked
+$radioCheckedIcon: '⦿'; // Radio checked

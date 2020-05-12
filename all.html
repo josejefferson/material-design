@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Material Design by Jefferson Dantas</title>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.7.95/css/materialdesignicons.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/legit-ripple@1.1.0/css/ripple.css">
+	<link rel="stylesheet" href="css/all.css">
+	<!-- <link rel="stylesheet" href="css/computer/computer.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+</head>
+
+<body class="">
+
+	<!-- NAVBAR -->
+	<nav class="navBar simpleNavBar">
+		<div class="sideButton">
+			<button onclick="openDrawer('.mainDrawer')"><span class="mdi mdi-menu"></span></button>
+		</div>
+		<div class="title">Material Design</div>
+		<div class="buttons">
+			<button><span class="mdi mdi-pencil"></span></button>
+			<button><span class="mdi mdi-magnify"></span></button>
+			<button><span class="mdi mdi-printer"></span></button>
+			<button onclick="openMenu('.mainMenu')"><span class="mdi mdi-dots-vertical"></span></button>
+		</div>
+	</nav>
+
+	<!-- DRAWER -->
+	<aside class="drawer mainDrawer">
+		<nav class="navBar">
+			<!-- <div class="sideButton">
+				<button onclick="openDrawer('.mainDrawer')"><span class="mdi mdi-menu"></span></button>
+			</div> -->
+			<div class="title">Material Design</div>
+			<!-- <div class="buttons">
+				<button><span class="mdi mdi-pencil"></span></button>
+				<button><span class="mdi mdi-magnify"></span></button>
+				<button><span class="mdi mdi-printer"></span></button>
+				<button onclick="openMenu('.mainMenu')"><span class="mdi mdi-dots-vertical"></span></button>
+			</div> -->
+		</nav>
+
+		<div class="userView"
+			style="background-image: url('https://img5.goodfon.com/wallpaper/nbig/5/e3/blue-material-design-tekstura-fon-linii-background.jpg');">
+			<div class="avatar"><img src="https://icon-library.net/images/avatar-icon/avatar-icon-5.jpg" alt="avatar">
+			</div>
+			<div class="title">Bobby J. Robinson</div>
+			<div class="subtitle">BobbyJRobinson@dayrep.com</div>
+		</div>
+
+		<div class="header">
+			<div class="title">Material Design</div>
+			<div class="subtitle">Por <i>Jefferson Dantas</i></div>
+		</div>
+
+		<div class="drawerList">
+			<div class="divider"></div>
+			<div class="subHeader">Subcabeçalho 1</div>
+			<button><span class="mdi mdi-star"></span>Botão 1</button>
+			<button><span class="mdi mdi-headset"></span>Botão 2</button>
+			<button><span class="mdi mdi-heart"></span>Botão 3</button>
+			<button><span class="mdi mdi-close"></span>Botão 4</button>
+			<button><span class="mdi mdi-delete"></span>Botão 5</button>
+
+			<div class="divider"></div>
+			<div class="subHeader">Subcabeçalho 2</div>
+			<button><span class="mdi mdi-star"></span>Botão 1</button>
+			<button><span class="mdi mdi-headset"></span>Botão 2</button>
+			<button><span class="mdi mdi-heart"></span>Botão 3</button>
+			<button><span class="mdi mdi-close"></span>Botão 4</button>
+			<button><span class="mdi mdi-delete"></span>Botão 5</button>
+
+			<div class="divider"></div>
+			<div class="subHeader">Subcabeçalho 3</div>
+			<button><span class="mdi mdi-star"></span>Botão 1</button>
+			<button><span class="mdi mdi-headset"></span>Botão 2</button>
+			<button><span class="mdi mdi-heart"></span>Botão 3</button>
+			<button><span class="mdi mdi-close"></span>Botão 4</button>
+			<button><span class="mdi mdi-delete"></span>Botão 5</button>
+		</div>
+	</aside>
+
+	<!-- MENU -->
+	<div class="menu topRight mainMenu">
+		<button><span class="mdi mdi-star"></span>Botão 1</button>
+		<a><span class="mdi mdi-headset"></span>Botão 2</a>
+		<button><span class="mdi mdi-heart"></span>Botão 3</button>
+		<button><span class="mdi mdi-close"></span>Botão 4</button>
+		<button><span class="mdi mdi-delete"></span>Botão 5</button>
+	</div>
+
+	<!-- FAB -->
+	<div class="fabButton textFab floating">
+		<div class="mdi mdi-material-design"></div>
+		<div class="text">FAB</div>
+	</div>
+
+	<main class="ccontainer">
+		<h2>SnackBars</h2>
+		<p>
+			<button class="button flatButton" onclick="snackBar({text:'SnackBar'})">Texto e botão OK</button><br>
+			<button class="button flatButton" onclick="snackBar({text:'SnackBar'})" disabled>Texto e botão
+				OK</button><br>
+			<button class="button flatButton" onclick="snackBar({text:'SnackBar',button:false})">Somente
+				texto</button><br>
+			<button class="button flatButton" onclick="snackBar({text:'SnackBar',time:2000})">Fecha em 2s</button><br>
+			<button class="button flatButton" onclick="snackBar({text:'SnackBar',textButton:'Fechar'})">Botão com texto
+				personalizado</button><br>
+			<button class="button flatButton"
+				onclick="snackBar({text:'SnackBar',buttonFunction:function(){openDrawer('.mainDrawer')}})">Botão com
+				ação diferente</button><br>
+		</p>
+	</main>
+
+	<label class="switch">
+		<input type="checkbox" name="ninteressa" id="tbmn" indeterminate>
+		<div class="switcher"></div>
+		SWITCHER
+	</label>
+	<label class="switch">
+		<input type="checkbox" name="ninteressa" id="tbmn">
+		<div class="switcher"></div>
+	</label>
+
+	<label class="radio">
+		<input type="radio" name="abc" id="">
+		<div class="icon mdi"></div>
+	</label>
+	<label class="checkBox">
+		<input type="checkbox" name="abcs" indeterminate id="">
+		<div class="icon mdi"></div>
+	</label>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/legit-ripple@1.1.0/js/ripple.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+	<script src="js/material-design-pc.js"></script>
+</body>
+
+</html>

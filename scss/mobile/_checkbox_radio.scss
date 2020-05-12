@@ -1,0 +1,70 @@
+label.checkBox,
+label.radio {
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	user-select: none;
+	
+	.icon {
+		align-items: center;
+		border-radius: 50%;
+		display: inline-flex;
+		height: 40px;
+		justify-content: center;
+		width: 40px;
+
+		&:hover {
+			background-color: $hoverBg;
+		}
+
+		@include darkRipple;
+	}
+
+	input[type=checkbox],
+	input[type=radio] {
+		display: none;
+
+		&+ .icon::before {
+			color: #888888;
+			font-size: 24px;
+		}
+
+		&:checked + .icon::before,
+		&:indeterminate:not([type=radio]) + .icon::before {
+			color: $secondaryBg;
+		}
+	}
+
+	@if($iconsType == 'materialDesignIcons') {
+		input[type=checkbox] ~ .icon::before, input[type=radio] ~ .icon::before {font-family: "Material Design Icons";}
+		input[type=checkbox] ~ .icon::before { content: '\F131'; }
+		input[type=checkbox]:checked ~ .icon::before { content: '\F132'; }
+		input[type=checkbox]:indeterminate ~ .icon::before { content: '\F375'; }
+		input[type=radio] ~ .icon::before { content: '\F43D'; }
+		input[type=radio]:checked ~ .icon::before { content: '\F43E'; }
+	}
+	@if($iconsType == 'materialIcons') {
+		input[type=checkbox] ~ .icon::before, input[type=radio] ~ .icon::before {font-family: "Material Icons";}
+		input[type=checkbox] ~ .icon::before { content: '\e835'; }
+		input[type=checkbox]:checked ~ .icon::before { content: '\e834'; }
+		input[type=checkbox]:indeterminate ~ .icon::before { content: '\e909'; }
+		input[type=radio] ~ .icon::before { content: '\e836'; }
+		input[type=radio]:checked ~ .icon::before { content: '\e837'; }
+	}
+	@if($iconsType == 'fontAwesome') {
+		input[type=checkbox] ~ .icon::before, input[type=radio] ~ .icon::before {font-family: "Font Awesome 5 Free";}
+		input[type=checkbox] ~ .icon::before { content: '\f0c8'; font-weight: 400;}
+		input[type=checkbox]:checked ~ .icon::before { content: '\f14a'; font-weight: 900;}
+		input[type=checkbox]:indeterminate ~ .icon::before { content: '\f146'; font-weight: 900;}
+		input[type=radio] ~ .icon::before { content: '\f111'; font-weight: 400;}
+		input[type=radio]:checked ~ .icon::before { content: '\f192'; font-weight: 400;}
+	}
+	@if($iconsType == 'custom') {
+		input[type=checkbox] ~ .icon::before, input[type=radio] ~ .icon::before {font-family: $checkRadioCustomFont;}
+		input[type=checkbox] ~ .icon::before { content: $checkBoxUncheckedIcon; }
+		input[type=checkbox]:checked ~ .icon::before { content: $checkBoxCheckedIcon; }
+		input[type=checkbox]:indeterminate ~ .icon::before { content: $checkBoxIndeterminateIcon; }
+		input[type=radio] ~ .icon::before { content: $radioUncheckedIcon; }
+		input[type=radio]:checked ~ .icon::before { content: $radioCheckedIcon; }
+	}
+}

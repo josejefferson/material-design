@@ -1,0 +1,782 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+:root {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+*[hidden=""] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navBarMargin {
+  margin-top: 74px;
+}
+
+.navBarMiniMargin {
+  margin-top: 58px;
+}
+
+.mdi {
+  font-size: 24px;
+}
+
+.lightRipple .legitRipple-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.darkRipple .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Bootstrap (https://github.com/twbs/bootstrap) */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/* -------------------------------------------------- */
+.button {
+  align-items: center;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  min-height: 35px;
+  outline: none;
+  padding: 0 1.5rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.15s ease;
+  user-select: none;
+  vertical-align: middle;
+}
+.button:not(.flatButton):not(.iconButton):not(:disabled):not([disabled]):hover {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.button:not(.flatButton):not(.iconButton):not(:disabled):not([disabled]):active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.button.flatButton {
+  background: none;
+  box-shadow: none;
+  color: #2196f3;
+}
+.button.flatButton .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.button.flatButton:disabled, .button.flatButton[disabled] {
+  color: rgba(0, 0, 0, 0.37);
+  cursor: default;
+}
+.button.flatButton:not(:disabled):not([disabled]):hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.button.iconButton {
+  align-items: center;
+  background: none;
+  border-radius: 50%;
+  box-shadow: none;
+  color: #2196f3;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+.button.iconButton .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.button.iconButton:disabled, .button.iconButton[disabled] {
+  color: rgba(0, 0, 0, 0.37);
+  cursor: default;
+}
+.button.iconButton:not(:disabled):not([disabled]):hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.button:disabled, .button[disabled] {
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.37);
+  cursor: default;
+}
+.button .legitRipple-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+label.checkBox,
+label.radio {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  user-select: none;
+}
+label.checkBox .icon,
+label.radio .icon {
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+label.checkBox .icon:hover,
+label.radio .icon:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+label.checkBox .icon .legitRipple-ripple,
+label.radio .icon .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+label.checkBox input[type=checkbox],
+label.checkBox input[type=radio],
+label.radio input[type=checkbox],
+label.radio input[type=radio] {
+  display: none;
+}
+label.checkBox input[type=checkbox] + .icon::before,
+label.checkBox input[type=radio] + .icon::before,
+label.radio input[type=checkbox] + .icon::before,
+label.radio input[type=radio] + .icon::before {
+  color: #888888;
+  font-size: 24px;
+}
+label.checkBox input[type=checkbox]:checked + .icon::before, label.checkBox input[type=checkbox]:indeterminate:not([type=radio]) + .icon::before,
+label.checkBox input[type=radio]:checked + .icon::before,
+label.checkBox input[type=radio]:indeterminate:not([type=radio]) + .icon::before,
+label.radio input[type=checkbox]:checked + .icon::before,
+label.radio input[type=checkbox]:indeterminate:not([type=radio]) + .icon::before,
+label.radio input[type=radio]:checked + .icon::before,
+label.radio input[type=radio]:indeterminate:not([type=radio]) + .icon::before {
+  color: #2196f3;
+}
+label.checkBox input[type=checkbox] ~ .icon::before, label.checkBox input[type=radio] ~ .icon::before,
+label.radio input[type=checkbox] ~ .icon::before,
+label.radio input[type=radio] ~ .icon::before {
+  font-family: "Material Design Icons";
+}
+label.checkBox input[type=checkbox] ~ .icon::before,
+label.radio input[type=checkbox] ~ .icon::before {
+  content: "";
+}
+label.checkBox input[type=checkbox]:checked ~ .icon::before,
+label.radio input[type=checkbox]:checked ~ .icon::before {
+  content: "";
+}
+label.checkBox input[type=checkbox]:indeterminate ~ .icon::before,
+label.radio input[type=checkbox]:indeterminate ~ .icon::before {
+  content: "";
+}
+label.checkBox input[type=radio] ~ .icon::before,
+label.radio input[type=radio] ~ .icon::before {
+  content: "";
+}
+label.checkBox input[type=radio]:checked ~ .icon::before,
+label.radio input[type=radio]:checked ~ .icon::before {
+  content: "";
+}
+
+.drawer {
+  background-color: #FAFAFA;
+  bottom: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform 0.15s ease;
+  user-select: none;
+  width: 255px;
+  z-index: 100;
+}
+.drawer.opened {
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  transform: translateX(0);
+}
+.drawer + .drawerFade {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 90;
+}
+.drawer + .drawerFade.opened {
+  display: block;
+}
+.drawer .header {
+  padding: 16px 16px 4px 16px;
+}
+.drawer .header .title {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.drawer .header .subtitle {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.drawer .userView {
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 12px;
+  padding: 16px;
+}
+.drawer .userView .avatar img {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+.drawer .userView .title {
+  color: #FFFFFF;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 16px;
+}
+.drawer .userView .title .black {
+  color: #000000;
+}
+.drawer .userView .subtitle {
+  color: #FFFFFF;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.drawer .userView .subtitle .black {
+  color: #000000;
+}
+.drawer .drawerList button {
+  width: 100%;
+}
+.drawer .drawerList button,
+.drawer .drawerList a {
+  align-items: center;
+  background: none;
+  border: none;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 24px;
+  text-align: left;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.drawer .drawerList button:hover,
+.drawer .drawerList a:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.drawer .drawerList button .material-icons,
+.drawer .drawerList button .mdi,
+.drawer .drawerList a .material-icons,
+.drawer .drawerList a .mdi {
+  color: #888;
+  margin-right: 24px;
+}
+.drawer .drawerList .divider {
+  background-color: #EEEEEE;
+  height: 1px;
+  margin: 12px 0;
+}
+.drawer .subHeader {
+  color: #686868;
+  display: block;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding: 8px 24px;
+  text-transform: uppercase;
+}
+.drawer .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fabButton {
+  align-items: center;
+  background-color: #2196f3;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 24px;
+  height: 56px;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  transition: box-shadow 0.25s ease, transform 0.3s ease, bottom 0.3s ease;
+  user-select: none;
+  width: 56px;
+  z-index: 3;
+}
+.fabButton.textFab {
+  border-radius: 1000px;
+  height: 48px;
+  min-width: 48px;
+  width: auto;
+}
+.fabButton.textFab .material-icons,
+.fabButton.textFab .mdi {
+  margin-left: 12px;
+}
+.fabButton.textFab .text {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+.fabButton.textFab .material-icons ~ .text,
+.fabButton.textFab .mdi ~ .text {
+  margin-left: 12px;
+}
+.fabButton.mini {
+  height: 40px;
+  width: 40px;
+}
+.fabButton.mini.textFab {
+  width: auto;
+}
+.fabButton.floating {
+  bottom: 32px;
+  position: fixed;
+  right: 32px;
+}
+.fabButton:disabled, .fabButton[disabled] {
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.37);
+  cursor: default;
+}
+.fabButton:not(:disabled):not([disabled]):active {
+  box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12);
+}
+.fabButton .legitRipple-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.list {
+  padding: 8px 0;
+  user-select: none;
+}
+.list .item {
+  align-items: center;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  min-height: 48px;
+  padding: 0 16px;
+}
+.list .item .left {
+  margin-right: 32px;
+}
+.list .item .right {
+  margin-left: auto;
+}
+.list .item .material-icons,
+.list .item .mdi {
+  color: rgba(0, 0, 0, 0.38);
+}
+.list .item .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.list button.item,
+.list a.item {
+  cursor: pointer;
+}
+.list .divider {
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.12) 1px solid;
+}
+
+.menu {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  max-height: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  min-width: 112px;
+  opacity: 0;
+  overflow-y: auto;
+  padding: 8px 0;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: opacity 0.3s ease, transform 0s ease 0.3s;
+  user-select: none;
+  z-index: 25;
+}
+.menu.opened {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.menu + .menuFade {
+  background: none;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 24;
+}
+.menu button {
+  width: 100%;
+}
+.menu button,
+.menu a {
+  align-items: center;
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: 0.00937rem;
+  outline: none;
+  padding: 0 16px;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.menu button:hover,
+.menu a:hover {
+  background-color: #F5F5F5;
+}
+.menu button .material-icons,
+.menu button .mdi,
+.menu a .material-icons,
+.menu a .mdi {
+  color: #888888;
+  margin-right: 25px;
+}
+.menu .divider {
+  border: none;
+  border-bottom: rgba(0, 0, 0, 0.12) 1px solid;
+  margin: 8px 0;
+}
+.menu.topLeft {
+  left: 10px;
+  top: 10px;
+  transform-origin: top left;
+}
+.menu.topRight {
+  right: 10px;
+  top: 10px;
+  transform-origin: top right;
+}
+.menu.bottomLeft {
+  bottom: 10px;
+  left: 10px;
+  transform-origin: bottom left;
+}
+.menu.bottomRight {
+  bottom: 10px;
+  right: 10px;
+  transform-origin: bottom right;
+}
+.menu .legitRipple-ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navBar {
+  align-items: center;
+  background-color: #f44336;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  height: 64px;
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 2;
+}
+.navBar.mini {
+  height: 48px;
+}
+.navBar.floating {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.navBar.floating.indented, .navBar.floating.sIndented {
+  box-shadow: none;
+  transform: translateY(-100%);
+}
+.navBar button,
+.navBar a {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 18px;
+  height: 48px;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  transition: 0.15s ease;
+  vertical-align: middle;
+  width: 48px !important;
+}
+.navBar button:disabled, .navBar button[disabled],
+.navBar a:disabled,
+.navBar a[disabled] {
+  color: rgba(0, 0, 0, 0.37);
+  cursor: default;
+}
+.navBar button:not(:disabled):not([disabled]):hover,
+.navBar a:not(:disabled):not([disabled]):hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.navBar button:active:not(:disabled, [disabled]),
+.navBar a:active:not(:disabled, [disabled]) {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.navBar button .legitRipple-ripple,
+.navBar a .legitRipple-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.navBar button.textButton,
+.navBar a.textButton {
+  border-radius: 1000px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  padding: 0 10px;
+  white-space: nowrap;
+  width: auto !important;
+}
+.navBar .sideButton {
+  margin-left: 12px;
+}
+.navBar .sideButton button:not(.sideButton) {
+  width: 48px;
+}
+.navBar .title {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  overflow: hidden;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.navBar .scrollContent {
+  margin-left: 20px;
+  margin-right: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+.navBar .buttons {
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 12px;
+  white-space: nowrap;
+}
+
+.page {
+  background-color: #FFFFFF;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: calc(100% + 64px);
+  transition: 0.3s ease;
+  width: 100%;
+  z-index: 100;
+}
+.page.opened {
+  top: 0;
+}
+.page:not(.opened) .navBar.floating {
+  top: calc(100% + 64px);
+}
+.page:not(.opened) .navBar.floating.indented {
+  display: none;
+}
+
+.snackBar {
+  align-items: center;
+  background-color: #323232;
+  border-radius: 2px;
+  bottom: 10px;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  justify-content: space-between;
+  left: 8px;
+  max-width: 338.462px;
+  min-height: 20px;
+  min-width: 288px;
+  overflow: hidden;
+  padding: 8px 24px;
+  position: fixed;
+  transform: translateY(calc(100% + 10px));
+  transition: 0.1s ease;
+  user-select: none;
+  z-index: 3;
+}
+.snackBar.opened {
+  transform: translateY(0%);
+}
+.snackBar .text {
+  color: #FFFFFF;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  padding: 6px 0;
+  word-break: break-word;
+}
+.snackBar .function {
+  display: flex;
+  height: 36px;
+  margin-left: auto;
+  padding-left: 48px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.snackBar .function button,
+.snackBar .function a {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: #2196f3;
+  cursor: pointer;
+  display: flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 14px;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  min-width: 64px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.snackBar .function button .legitRipple-ripple,
+.snackBar .function a .legitRipple-ripple {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+label.switch {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  user-select: none;
+}
+label.switch input {
+  display: none;
+}
+label.switch .switcher {
+  height: 14px;
+  margin: 4px;
+  position: relative;
+  width: 32px;
+}
+label.switch .switcher::before,
+label.switch .switcher::after {
+  content: "";
+  position: absolute;
+}
+label.switch .switcher::before {
+  background-color: #000000;
+  border-radius: 7px;
+  height: 100%;
+  opacity: 0.38;
+  transition: 0.15s ease;
+  width: 100%;
+}
+label.switch input:checked ~ .switcher::before {
+  background-color: #2196f3;
+  opacity: 0.54;
+}
+label.switch .switcher::after {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 20px;
+  margin-top: -3px;
+  opacity: 1;
+  right: 16px;
+  transition: 0.15s ease;
+  width: 20px;
+}
+label.switch input:checked ~ .switcher::after {
+  background-color: #2196f3;
+  right: -4px;
+}
+label.switch input:indeterminate ~ .switcher::after {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=computer.css.map */

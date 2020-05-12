@@ -1,0 +1,318 @@
+/*
+---------------------------------
+Material Design (mobile)
+Versão ALPHA
+Desenvolvido por Jefferson Dantas
+Baseado em Google Material Design
+---------------------------------
+*/
+/* COLOCAR FONT FAMILY ROBOTO EM TODOS OS ELEMENTOS */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+@import url('material-elevation.css');
+@import url('material-colors.css');
+
+:root {
+	-webkit-tap-highlight-color: transparent;
+	font-family: "Roboto", "Arial", sans-serif;
+}
+
+*[hidden=""] {
+	display: none !important;
+}
+
+/* Ripple */
+.legitRipple > .legitRipple-ripple,
+.legitRipple.darkRipple {
+	background-color: rgba(0,0,0,0.2);
+}
+
+.legitRipple.lightRipple > .legitRipple-ripple {
+	background-color: rgba(255,255,255,0.2);
+}
+
+/* Barra superior */
+.topbar {
+	align-items: center;
+	background: #607D8B;
+	box-shadow: var(--elevation-4dp);
+	color: #FFFFFF;
+	display: flex;
+	font-size: 20px;
+	font-weight: 500;
+	height: 56px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: top .1s ease, box-shadow .3s ease;;
+	user-select: none;
+	z-index: 2;
+}
+
+.topbar.indented {
+	top: -66px;
+}
+
+.topbar button,
+.topbar a {
+	align-items: center;
+	background: none;
+	border-radius: 50%;
+	border: none;
+	color: #FFFFFF;
+	display: inline-flex;
+	height: 40px;
+	justify-content: center;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	transition: .3s ease;
+	vertical-align: middle;
+	width: 40px !important;
+}
+
+.topbar button:not(.text-button),
+.topbar a:not(.text-button) {
+	overflow: visible !important;
+}
+
+.topbar button:active,
+.topbar a:active {
+	background: rgba(0,0,0,0.08);
+}
+
+.topbar button.text-button,
+.topbar a.text-button {
+	border-radius: 1000px;
+	font-size: 18px;
+	padding: 0 10px;
+	white-space: nowrap;
+	width: auto !important;
+}
+
+.topbar .side-button {
+	margin-left: 12px !important;
+	margin-right: 5px !important;
+	width: 40px !important;
+}
+
+.topbar .title {
+	overflow: hidden;
+	padding-left: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.topbar .buttons {
+	margin-left: auto;
+	padding-left: 20px;
+	padding-right: 3px;
+	white-space: nowrap;
+}
+
+.topbar .content {
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 100%;
+}
+
+/* Botão flutuante */
+.fab-button {
+	align-items: center;
+	background: #607D8B;
+	border-radius: 50%;
+	border: 0;	
+	box-shadow: var(--elevation-6dp);
+	color: #FFFFFF;
+	display: inline-flex;
+	height: 56px;
+	justify-content: center;
+	outline: none;
+	transition: box-shadow 0.25s ease, bottom 0.3s ease;
+	user-select: none;
+	width: 56px;
+	z-index: 3;
+}
+
+.fab-button:active {
+	box-shadow: var(--elevation-12dp);
+}
+
+.floating {
+	bottom: 16px;
+	position: fixed !important;
+	right: 16px;
+}
+
+/* Snackbar */
+.snackBar {
+	align-items: center;
+	background-color: #323232;
+	bottom: 0;
+	display: flex;
+	left: 0;
+	max-width: 100%;
+	min-height: 16.8px;
+	padding: 8px 24px;
+	position: fixed;
+	right: 0;
+	transform: translateY(100%);
+	transition: 0.3s ease;
+	user-select: none;
+	z-index: 3;
+}
+
+.snackBar .text {
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 6px 0px;
+	word-break: break-word;
+}
+
+.snackBar .function {
+	height: 36px;
+	margin-left: auto;
+	padding-left: 48px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.snackbar .function button,
+.snackbar .function a {
+	background: none;
+	border-radius: 3px;
+	border: none;
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 14px;
+	height: 100%;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+	padding: 0px 8px;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/* Menu de opções */
+.menu {
+	background: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: var(--elevation-8dp);
+	display: inline-block;
+	max-height: calc(100% - 10px);
+	max-width: calc(100% - 10px);
+	min-width: 196px;
+	overflow-y: auto;
+	padding: 0;
+	position: absolute;
+	transform-origin: top left;
+	transform: scale(0);
+	transition: transform .15s ease;
+	user-select: none;
+	z-index: 25;
+}
+
+.menuFade {
+	background: none;
+	bottom: 0;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 24;
+}
+
+.menu button,
+.menu a {
+	align-items: center;
+	background: none;
+	border: none;
+	color: black;
+	display: flex;
+	font-size: 1rem;
+	font-weight: 400;
+	height: 48px;
+	letter-spacing: .00937em;
+	outline: none;
+	overflow: hidden;
+	padding: 0 16px;
+	text-align: left;
+	text-decoration: none;
+	transition: background .5s ease;
+	white-space: nowrap;
+}
+
+.menu button {
+	width: 100%;
+}
+
+.menu button:active,
+.menu a:active {
+	background: #DADBDC;
+}
+
+.menu button:first-child,
+.menu a:first-child {
+	border-radius: 4px 4px 0 0;
+}
+
+.menu button:last-child,
+.menu a:last-child {
+	border-radius: 0 0 4px 4px;
+}
+
+.menu button:first-child:last-child {
+	border-radius: 4px;
+}
+
+.menu .divider {
+	border: none;
+	border-bottom: rgba(0,0,0,.12) 1px solid;
+	margin: 8px 0;
+}
+
+.menu button .material-icons,
+.menu a .material-icons,
+.menu button .mdi,
+.menu a .mdi {
+	color: #888;
+	margin-right: 24px;
+}
+
+/* Botões */
+.button {
+	background: #607D8B;
+	border-radius: 2px;
+	border: none;
+	box-shadow: var(--elevation-2dp);
+	color: #FFFFFF;
+	display: flex;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: .8px;
+	min-height: 35px;
+	outline: none;
+	padding: 0 1.5rem;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: .3s ease;
+	user-select: none;
+	vertical-align: middle;
+}
+
+.button:active {
+	box-shadow: var(--elevation-8dp);
+}
+
+/* Elementos sem sombra */
+.no-shadow {
+	box-shadow: none;
+	text-shadow: none;
+}

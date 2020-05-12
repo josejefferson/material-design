@@ -1,0 +1,113 @@
+.navBar {
+	align-items: center;
+	background-color: $primaryBg;
+	box-shadow: $el-4dp;
+	color: color($primaryBg);
+	display: flex;
+	font-family: $font;
+	font-size: 1.25rem;
+	font-weight: 500;
+	height: 64px;
+	transition: .3s ease;
+	user-select: none;
+	z-index: 2;
+
+	&.mini {
+		height: 48px;
+	}
+
+	&.floating {
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+
+		&.indented,
+		&.sIndented {
+			box-shadow: none;
+			transform: translateY(-100%);
+		}
+	}
+
+	button,
+	a {
+		align-items: center;
+		background: none;
+		border: none;
+		border-radius: 50%;
+		color: color($primaryBg);
+		cursor: pointer;
+		display: inline-flex;
+		font-size: 18px;
+		height: 48px;
+		justify-content: center;
+		margin: 0;
+		outline: none;
+		padding: 0;
+		transition: .15s ease;
+		vertical-align: middle;
+		width: 48px !important;
+
+		&:disabled,
+		&[disabled] {
+			color: $disabledColor;
+			cursor: default;
+		}
+
+		&:not(:disabled):not([disabled]) {
+			&:hover {
+				background-color: rgba(0,0,0,0.08);
+			}
+		}
+
+		&:active:not(:disabled, [disabled]) {
+			background-color: rgba(0, 0, 0, 0.08);
+		}
+
+		@include ripple($primaryBg);
+
+	}
+
+	button.textButton,
+	a.textButton {
+		border-radius: 1000px;
+		font-family: $font;
+		font-size: 18px;
+		padding: 0 10px;
+		white-space: nowrap;
+		width: auto !important;
+	}
+
+	.sideButton {
+		margin-left: 12px;
+		
+		button:not(.sideButton) {
+			width: 48px;
+		}
+	}
+
+	.title {
+		font-family: $font;
+		font-weight: 500;
+		letter-spacing: .0125em;
+		overflow: hidden;
+		padding-left: 20px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	.scrollContent {
+		margin-left: 20px;
+		margin-right: 12px;
+		overflow-x: auto;
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.buttons {
+		margin-left: auto;
+		padding-left: 20px;
+		padding-right: 12px;
+		white-space: nowrap;
+	}
+}

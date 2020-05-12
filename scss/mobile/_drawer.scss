@@ -1,0 +1,139 @@
+.drawer {
+	background-color: #FAFAFA;
+	bottom: 0;
+	font-family: $font;
+	font-size: 16px;
+	left: 0;
+	padding-bottom: 8px;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	transform: translateX(-100%);
+	transition: transform .3s ease;
+	user-select: none;
+	width: 280px;
+	z-index: 100;
+
+	&.opened {
+		box-shadow: $el-16dp;
+		transform: translateX(0);
+	}
+
+	&+.drawerFade {
+		background-color: rgba(0,0,0,0.5);
+		bottom: 0;
+		display: none;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 90;
+	
+		&.opened {
+			display: block;
+		}
+	}
+	
+	.header {
+		padding: 16px 16px 4px 16px;
+
+		.title {
+			font-family: $font;
+			font-size: 1.25rem;
+			font-weight: 500;
+		}
+
+		.subtitle {
+			font-family: $font;
+			font-size: .875rem;
+			font-weight: 400;
+		}
+	}
+
+	.userView {
+		padding: 16px;
+		background-color: #000000;
+		background-size: cover;
+		background-position: center;
+		margin-bottom: 8px;
+
+		.avatar img {
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+		}
+
+		.title {
+			color: #FFFFFF;
+			font-family: $font;
+			margin-top: 16px;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 24px;
+		}
+
+		.subtitle {
+			font-family: $font;
+			font-weight: 400;
+			color: #FFFFFF;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	.drawerList {
+		button {
+			width: 100%;
+		}
+	
+		button,
+		a {
+			align-items: center;
+			background: none;
+			border: none;
+			color: #111; //rgba(0,0,0,0.87)
+			display: flex;
+			font-family: $font;
+			font-size: 14px;
+			font-weight: 500;
+			height: 48px;
+			outline: none;
+			overflow: hidden;
+			padding: 0 16px;
+			text-decoration: none;
+			text-overflow: ellipsis;
+			transition: background-color .3s ease;
+			white-space: nowrap;
+	
+			&:active {
+				background-color: rgba(0,0,0,0.04);
+			}
+	
+			.material-icons,
+			.mdi {
+				color: #757575;
+				margin-right: 32px;
+			}
+		}
+	
+		.divider {
+			margin-top: 8px;
+			height: 1px;
+			background-color: #E0E0E0;
+		}
+	}
+
+	.subHeader {
+		align-items: center;
+		color: rgba(0,0,0,0.54);
+		display: flex;
+		font-family: $font;
+		font-size: 14px;
+		font-weight: 500;
+		height: 48px;
+		margin: 0;
+		padding: 0 16px;
+	}
+
+	@include darkRipple;
+}
